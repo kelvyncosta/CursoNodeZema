@@ -15,6 +15,14 @@ class UsersController {
 
     return res.json(user);
   }
+
+  async show(req, res) {
+    const { id } = req.params;
+
+    const user = users.find(item => item.id === +id);
+
+    return res.json(user);
+  }
 }
 
 export default UsersController;
